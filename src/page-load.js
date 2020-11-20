@@ -1,3 +1,5 @@
+import * as Weather from './weather';
+
 const content = document.querySelector('#content');
 
 export function createHeroLayout() {
@@ -21,10 +23,10 @@ export function createHeroLayout() {
               <div class="column is-half">
                 <div class="field has-addons">
                   <div class="control is-expanded">
-                    <input class="input is-rounded" type="text" placeholder="Enter your location...">
+                    <input class="input is-rounded" id='city-input' type="text" placeholder="Enter your location...">
                   </div>
                   <div class="control">
-                    <a class="button is-info is-rounded">
+                    <a class="button is-info is-rounded" id="search-button">
                       Search
                     </a>
                   </div>
@@ -36,10 +38,7 @@ export function createHeroLayout() {
 
         <div class="hero-foot">
           <nav class="tabs is-boxed is-fullwidth">
-            <div class="container">
-              <ul>
-                <li id="home-tab" class="is-active"><a id="home-link">Weather info</a></li>
-              </ul>
+            <div class="container" id="weather-content">
             </div>
           </nav>
         </div>`;
