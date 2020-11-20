@@ -1,13 +1,15 @@
+import background from './background';
+
 const apiKey = '447dcfa912e5f6fa430f8469ed83f7d7';
 const baseUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
 function renderWeather(data) {
   if (data.cod === '404') {
-    alert(data.message);
     return;
   }
 
   const { description } = data.weather[0];
+  background(description);
   const { name } = data;
   const { country } = data.sys;
   const { temp } = data.main;
@@ -18,7 +20,7 @@ function renderWeather(data) {
   const weatherContent = document.querySelector('#weather-content');
   weatherContent.innerHTML = '';
   const weatherHTML = `
-                      <nav class="level transparent-bg">
+                      <nav class="level transparent-bg rounded-box">
                         <div class="level-item has-text-centered">
                           <div>
                             <p></p>
@@ -61,7 +63,7 @@ function renderWeather(data) {
   weatherContent.insertAdjacentHTML('beforeend', weatherHTML);
 }
 
-export async function getWeatherInfo() {
+export default async function getWeatherInfo() {
   const city = document.querySelector('#city-input').value;
   const unitType = document.querySelector('input[name=units]:checked').value;
   const url = `${baseUrl}?q=${city}&units=${unitType}&appid=${apiKey}`;
@@ -70,7 +72,7 @@ export async function getWeatherInfo() {
     const response = await fetch(url, { mode: 'cors' });
 
     const jsonResponse = await response.json();
-    renderWeather(jsonResponse);
+    return renderWeather(jsonResponse);
   } catch (error) {
     return null;
   }

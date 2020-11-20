@@ -1,8 +1,6 @@
-import * as Weather from './weather';
-
 const content = document.querySelector('#content');
 
-export function createHeroLayout() {
+export default function createHeroLayout() {
   const section = document.createElement('section');
   section.className = 'hero is-fullheight has-bg-img';
   const heroContent = `  
@@ -23,7 +21,7 @@ export function createHeroLayout() {
               <div class="column is-half">
                 <div class="field has-addons">
                   <div class="control is-expanded">
-                    <input class="input is-rounded" id='city-input' type="text" placeholder="Enter your location...">
+                    <input class="input is-rounded" id='city-input' type="text" placeholder="Enter your location..." pattern="[a-zA-Z]+">
                   </div>
                   <div class="control">
                     <a class="button is-info is-rounded" id="search-button">
@@ -34,19 +32,16 @@ export function createHeroLayout() {
 
                 <div class="field">
                   <div class="control">
-                    <label class="radio">
+                    <label class="radio has-text-black-ter">
                       <input type="radio" name="units" value="metric" checked>
                       Celsius
                     </label>
-                    <label class="radio">
+                    <label class="radio has-text-black-ter">
                       <input type="radio" name="units" value="imperial">
                       Fahrenheit
                     </label>
                   </div>
                 </div>
-
-
-
               </div>
             </div>
           </div>
