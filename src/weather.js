@@ -14,6 +14,7 @@ function renderWeather(data) {
   const { country } = data.sys;
   const { temp } = data.main;
   const { feels_like: feelsLike } = data.main;
+  const symbol = document.querySelector('input[name=units]:checked').value === 'metric' ? 'C' : 'F';
   const { humidity } = data.main;
   const iconUrl = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
 
@@ -50,13 +51,13 @@ function renderWeather(data) {
                         <div class="level-item has-text-centered">
                           <div>
                             <p class="heading has-text-black-ter">temperature</p>
-                            <p class="title has-text-black-ter">${temp}°</p>
+                            <p class="title has-text-black-ter">${temp}°${symbol}</p>
                           </div>
                         </div>
                         <div class="level-item has-text-centered">
                           <div>
                             <p class="heading has-text-black-ter">feels like</p>
-                            <p class="title has-text-black-ter">${feelsLike}°</p>
+                            <p class="title has-text-black-ter">${feelsLike}°${symbol}</p>
                           </div>
                         </div>
                       </nav>`;
