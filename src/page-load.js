@@ -31,6 +31,22 @@ export function createHeroLayout() {
                     </a>
                   </div>
                 </div>
+
+                <div class="field">
+                  <div class="control">
+                    <label class="radio">
+                      <input type="radio" name="units" value="metric" checked>
+                      Celsius
+                    </label>
+                    <label class="radio">
+                      <input type="radio" name="units" value="imperial">
+                      Fahrenheit
+                    </label>
+                  </div>
+                </div>
+
+
+
               </div>
             </div>
           </div>

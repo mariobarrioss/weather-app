@@ -63,7 +63,8 @@ function renderWeather(data) {
 
 export async function getWeatherInfo() {
   const city = document.querySelector('#city-input').value;
-  const url = `${baseUrl}?q=${city}&units=metric&appid=${apiKey}`;
+  const unitType = document.querySelector('input[name=units]:checked').value;
+  const url = `${baseUrl}?q=${city}&units=${unitType}&appid=${apiKey}`;
 
   try {
     const response = await fetch(url, { mode: 'cors' });
