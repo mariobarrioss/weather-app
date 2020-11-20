@@ -1,0 +1,12 @@
+.has-bg-img {
+  background: url('./images/background.jpg') center center;
+  background-size: cover;
+}
+
+.transparent-bg {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.rounded-box {
+  border-radius: 25px;
+}
