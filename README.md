@@ -17,7 +17,7 @@ The main goal of this project is to use the OpenWeatherMap API and asynchronous 
 ![screenshot](./docs/screenshot.jpg)
 
 ## Live Demo
-[Restaurant Page](https://competent-khorana-4e2edf.netlify.app/)
+[Weather App](https://quirky-elion-d1808c.netlify.app/)
 <!-- INSTALLATION -->
 ## Installation
 
